@@ -1,9 +1,12 @@
 import streamlit as st
 from openai import OpenAI
 
-from streamlit_webrtc import webrtc_streamer
+from streamlit_webrtc import webrtc_streamer, WebRtcMode
 
-webrtc_streamer(key="sample",    
+webrtc_streamer(key="sample",  
+    mode=WebRtcMode.SENDRECV,
+    media_stream_constraints={"video": True, "audio": False},
+    async_processing=False,
                 rtc_configuration={  # Add this config
         #"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
           "iceServers": [
