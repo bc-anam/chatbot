@@ -1,6 +1,10 @@
 import streamlit as st
 from openai import OpenAI
 
+from streamlit_webrtc import webrtc_streamer
+
+webrtc_streamer(key="sample")
+
 # Show title and description.
 st.title("💬 Chatbot")
 st.write(
