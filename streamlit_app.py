@@ -5,7 +5,32 @@ from streamlit_webrtc import webrtc_streamer
 
 webrtc_streamer(key="sample",    
                 rtc_configuration={  # Add this config
-        "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+        #"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+          "iceServers": [
+      {
+        "urls": "stun:stun.relay.metered.ca:80",
+      },
+      {
+        "urls": "turn:global.relay.metered.ca:80",
+        "username": "75533ce9605644d4873f8be0",
+        "credential": "spkGLyU5vosSyGKx",
+      },
+      {
+        "urls": "turn:global.relay.metered.ca:80?transport=tcp",
+        "username": "75533ce9605644d4873f8be0",
+        "credential": "spkGLyU5vosSyGKx",
+      },
+      {
+        "urls": "turn:global.relay.metered.ca:443",
+        "username": "75533ce9605644d4873f8be0",
+        "credential": "spkGLyU5vosSyGKx",
+      },
+      {
+        "urls": "turns:global.relay.metered.ca:443?transport=tcp",
+        "username": "75533ce9605644d4873f8be0",
+        "credential": "spkGLyU5vosSyGKx",
+      },
+  ],
 })
 
 # Show title and description.
